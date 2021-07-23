@@ -1,0 +1,4 @@
+*.csv
+*.dat
+*.ipynb
+password__gen.py
