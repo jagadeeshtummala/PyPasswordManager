@@ -6,8 +6,13 @@ import pandas as pd
 import sys
 import binascii
 
+if os.name == 'nt':
+    clrcmd = 'cls'
+else:
+    clrcmd = 'clear'
+
 def clrscreen():
-    os.system('clear')
+    os.system(clrcmd)
 
 def hexHashCode(text):
     return sha256(text.encode('utf-8')).hexdigest()
@@ -69,7 +74,7 @@ def getAllPasswords(cipher, df):
         
 def writeToFile(appName, userName, emailId, weblink, password, secretHash):
     aes_key = secretHash[::-1][1::2]
-    cipher = AES.new(aes_key.encode('utf-8'))
+    cipher = AES.new(aes_key.encode('utf-8'),mode=AES.MODE_ECB)
     emailId = Encrypt(cipher, emailId)
     password = Encrypt(cipher, password)
     fields = ["AppName", "UserName", "EmailId", "Password", "Weblink"]
@@ -89,23 +94,23 @@ def writeToFile(appName, userName, emailId, weblink, password, secretHash):
 
 def getPassword(secretHash):
     aes_key = secretHash[::-1][1::2]
-    cipher = AES.new(aes_key.encode('utf-8'))
+    cipher = AES.new(aes_key.encode('utf-8'), mode=AES.MODE_ECB)
     df = pd.read_csv('passwdData.csv')
     while True:
-        print("Menu\n0 for search by App\n1 for search by email")
-        print("2 for Display all Passwords\nR for Return to Previous menu\nQ for Quit\n",end="")
+        print("Menu\n1 for search by App\n2 for search by email")
+        print("3 for Display all Passwords\nR for Return to Previous menu\nQ for Quit\n",end="")
         choice = input()
         clrscreen()
-        if choice == '0':
+        if choice == '1':
             password, choice = getByName(df,cipher)
             print(f'The Password for APP {choice} is:  {password}')
             print('Enter to Continue....',end="")
             input()
             clrscreen()
-        elif choice == '1':
+        elif choice == '2':
             #Print Passwords linked to an Email
             getByEmail(df, cipher)
-        elif choice == '2':
+        elif choice == '3':
             master_password = input('Enter Master Password Again for Security: ')
             clrscreen()
             if secretHash == hexHashCode(master_password):
