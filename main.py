@@ -1,4 +1,3 @@
-import os
 import sys
 from hashlib import sha256
 from passHandling import saveNewPassword, retrivePassword
@@ -15,8 +14,7 @@ def main():
         saved_key = file.read()
         file.close()
     except:
-        print('Welcome, this is your First Time enter a Master Password: ')
-        secret_key = input()
+        secret_key = input('Welcome, this is your First Time enter a Master Password: ')
         secret_hash = genHash(secret_key)
         file = open('master_secret.dat','w+')
         file.write(secret_hash)

@@ -1,8 +1,6 @@
 import csv
 import os
 from hashlib import sha256
-from Crypto.Cipher import AES
-import pandas as pd
 import sys
 import binascii
 
@@ -13,6 +11,24 @@ else:
 
 def clrscreen():
     os.system(clrcmd)
+
+#Try to install Packages if not found already ()
+try:
+    from Crypto.Cipher import AES
+except:
+    print('Trying to install required modules, this is required only once....')
+    os.system('pip3 install pycryptodome')
+    clrscreen()
+    from Crypto.Cipher import AES
+
+try:
+    import pandas as pd
+except:
+    print('Trying to install required modules, this is required only once....')
+    os.system('pip3 install pandas')
+    clrscreen()
+    import pandas as pd
+
 
 def hexHashCode(text):
     return sha256(text.encode('utf-8')).hexdigest()
