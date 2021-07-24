@@ -2,3 +2,4 @@
 *.dat
 *.ipynb
 password__gen.py
+__pycache__/
