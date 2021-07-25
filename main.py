@@ -1,7 +1,7 @@
 import sys
 from hashlib import sha256
 from passHandling import saveNewPassword, retrivePassword
-from csvFileHandle import clrscreen
+from dBHandle import clrscreen
 
 
 def genHash(secret_key):
