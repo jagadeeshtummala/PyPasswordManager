@@ -1,5 +1,7 @@
 *.csv
 *.dat
 *.ipynb
+*.db
+*.pyc
 password__gen.py
 __pycache__/

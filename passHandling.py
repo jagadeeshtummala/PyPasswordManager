@@ -1,7 +1,7 @@
 from hashlib import sha256
 import random, string
 
-from csvFileHandle import writeToFile, getPassword
+from dBHandle import writeToFile, getPassword
 
 def passwordCheck(passwd):
     alphaLower= 'abcdefghijklmnopqrstuvwxyz'
