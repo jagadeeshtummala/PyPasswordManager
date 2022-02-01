@@ -11,6 +11,12 @@ except:
     print('Trying to install required modules, this is required only once....')
     os.system('pip3 install pycryptodome')
     from Crypto.Cipher import AES
+try:
+    import tkinter as tk
+except:
+    print('Trying to install required modules, this is required only once....')
+    os.system('pip3 install tkinter')
+    from Crypto.Cipher import AES
 
 def Decrypt(cipher, passcode):
     passcode = binascii.unhexlify(passcode)

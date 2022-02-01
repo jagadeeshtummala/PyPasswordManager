@@ -1,5 +1,5 @@
 # PyPassword Manager (PyPass)
-- It is a command line tool for managing (creating, saving, retriving) passwords using ***Python***.
+- It is a GUI App/command line tool for managing (creating, saving, retriving) passwords using ***Python***.
 
 - It generates random password with alpha numeric characters of required length (default is 16 characters).
 
@@ -16,7 +16,7 @@
 - **Requirements**
     - [***Python***](https://www.python.org/) version 3
     - [***pycryptodome***](https://pycryptodome.readthedocs.io/en/latest/) module (can be installed automatically while running for the first time if python is installed.)
-
+    - [***tkinter***](https://docs.python.org/3/library/tkinter.html) module (can be installed automatically while running for the first time if python is installed.)
 ---
 
 - Running the Code
