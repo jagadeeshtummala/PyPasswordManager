@@ -24,12 +24,26 @@
     
     - if Git is installed open terminal or command prompt or Gitbash and run
     >`git clone https://github.com/jagadeeshtummala/PyPasswordManager.git`
-    
-    - Open the termianl or command prompt in the downloaded folder and run
-        - for windows
-            >`python main.py`
+
+    - Added GUI Application to run the GUI App run the main_gui.py python program
+        - for Windows
+            ```
+            python main_gui.py
+            ```
         - for Linux
-            >`python3 main.py`
+            ```
+            python3 main_gui.py
+            ```
+    - or Run the [main_gui.py] Python file in the way familiar to you.
+    - For command line based version Open the termianl or command prompt in the downloaded folder and run
+        - for Windows
+            ```
+            python main.py
+            ````
+        - for Linux
+            ```
+            python3 main.py
+            ```
     - or Run the [main.py](https://github.com/jagadeeshtummala/PyPasswordManager/blob/main/main.py) Python file in the way you are familiar with.
 
 ---
